@@ -69,8 +69,8 @@ Over a finite field `k` (`WeilCurves/FiniteField/`):
   satisfies `A_n (q − 1) = ∑_{c ∈ Cl(n)} (q^{ℓ(c)} − 1)`, hence
   `A_n (q − 1) = #Cl(n) (q^{n+1−g} − 1)` for `n > 2g − 2`.
 * `Zeta`: the zeta function `Z(t) = ∑ A_n t^n ∈ ℤ⟦t⟧`; `ℓ(0) = 1` and `g ≥ 0` for `k` the
-  full constant field. **Rationality** (`exists_LPolynomial'`): *given a divisor of degree 1*
-  (explicit hypothesis, to be discharged by F. K. Schmidt's theorem),
+  full constant field. **Rationality** (`exists_LPolynomial'`): given a divisor of degree 1
+  (discharged by Schmidt's theorem below, `exists_LPolynomial_of_full`),
   `(1 − t)(1 − qt) Z(t) = L(t)` with `L ∈ ℤ[t]` of degree exactly `2g`, `L(0) = 1` and leading
   coefficient `q^g` (computed from `ℓ` on the classes of degree `2g − 2`: `g` for the canonical
   class, `g − 1` for the others).
@@ -86,6 +86,15 @@ Constant field extensions (`WeilCurves/ConstantExtension/`):
   `ord_Q x = e(Q) ord_P x`, `deg P ≤ deg Q`, `[L : k(x)] = [L : K][K : k(x)]`, an element whose
   only zero is a given place, and the **fundamental inequality**
   `∑_{Q ∈ S} e(Q) deg Q ≤ [L : K] deg P` for places `Q` above `P`.
+* `Split`: Chevalley's extension theorem in the form needed; for `r ∣ deg P`, the `r` embeddings
+  of the degree-`r` extension of `k` into `κ(P)` give `r` distinct places of `ConstExt k K r`
+  above `P` (via the subring `O_P[θ] ≅ O_P[X]/(f)`), and with the fundamental inequality: **above
+  `P` there are exactly `r` places, each of degree `deg P`** (`places_above`).
+* `Schmidt`: `A_n ≤ h q^{n − riemannConst}` for large `n` (any function field over a finite
+  field); the index `δ` (smallest positive divisor degree); **F. K. Schmidt's theorem**
+  `δ = 1` (`index_eq_one`, `exists_deg_eq_one`) by the coefficient-growth argument (two places
+  above each place of `K` in `K_δ` give `A'(δm) ≥ (m − c) q^{δm − 2g}`, against `A'(n) ≤ C q^n`);
+  hence the **unconditional rationality** of the zeta function (`exists_LPolynomial_of_full`).
 
 ## Plan
 

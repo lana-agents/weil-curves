@@ -89,10 +89,10 @@ theorem card_Cl {D : Divisor k K} : Nat.card (Cl k K D.deg) = classNumber k K :=
       left_inv := fun c ↦ by simp
       right_inv := fun c ↦ by simp }
 
-/-- **`A_n (q - 1) = ∑_{c ∈ Cl(n)} (q^{ℓ(c)} - 1)`**. -/
-theorem effCount_mul (hk : IsFullConstantField k K) (n : ℤ) :
-    effCount k K n * (Nat.card k - 1) =
-      ∑ c ∈ (finite_Cl (k := k) (K := K) n).toFinset, (Nat.card k ^ Pic.ell c - 1) := by
+/-- `A_n = ∑_{c ∈ Cl(n)} #{E ≥ 0 | E ∼ c}`. -/
+theorem effCount_eq_sum (n : ℤ) :
+    effCount k K n = ∑ c ∈ (finite_Cl (k := k) (K := K) n).toFinset,
+      Nat.card (effClass (Quotient.out c : Divisor k K)) := by
   classical
   have : Fintype (effDeg k K n) := (finite_setOf_effective_deg_eq n).fintype
   set T := (finite_Cl (k := k) (K := K) n).toFinset
@@ -119,12 +119,18 @@ theorem effCount_mul (hk : IsFullConstantField k K) (n : ℤ) :
           exact h1.symm⟩
         left_inv := fun E ↦ rfl
         right_inv := fun E ↦ rfl }
-  rw [effCount, ← Nat.card_congr (Equiv.sigmaFiberEquiv cls), Nat.card_sigma, Finset.sum_mul]
-  rw [← Finset.sum_coe_sort T]
+  rw [effCount, ← Nat.card_congr (Equiv.sigmaFiberEquiv cls), Nat.card_sigma,
+    ← Finset.sum_coe_sort T]
+  exact Finset.sum_congr rfl fun c _ ↦ hfib c
+
+/-- **`A_n (q - 1) = ∑_{c ∈ Cl(n)} (q^{ℓ(c)} - 1)`**. -/
+theorem effCount_mul (hk : IsFullConstantField k K) (n : ℤ) :
+    effCount k K n * (Nat.card k - 1) =
+      ∑ c ∈ (finite_Cl (k := k) (K := K) n).toFinset, (Nat.card k ^ Pic.ell c - 1) := by
+  rw [effCount_eq_sum, Finset.sum_mul]
   refine Finset.sum_congr rfl fun c _ ↦ ?_
-  rw [hfib c]
-  have h := card_effClass hk (Quotient.out c.1)
-  have hell : Pic.ell c.1 = ell (Quotient.out c.1 : Divisor k K) := by
+  have h := card_effClass hk (Quotient.out c)
+  have hell : Pic.ell c = ell (Quotient.out c : Divisor k K) := by
     rw [← Pic.ell_mk, QuotientAddGroup.out_eq']
   rw [hell]
   omega

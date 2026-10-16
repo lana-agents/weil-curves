@@ -95,6 +95,12 @@ Constant field extensions (`WeilCurves/ConstantExtension/`):
   `δ = 1` (`index_eq_one`, `exists_deg_eq_one`) by the coefficient-growth argument (two places
   above each place of `K` in `K_δ` give `A'(δm) ≥ (m − c) q^{δm − 2g}`, against `A'(n) ≤ C q^n`);
   hence the **unconditional rationality** of the zeta function (`exists_LPolynomial_of_full`).
+* `FiniteField/PlaceCount`: `B_d` (places of degree `d`), `N_r = ∑_{d∣r} d B_d`, and the Euler
+  product in the form `n A_n = ∑_{r=1}^n N_r A_{n−r}`, i.e. `t Z'(t) = Z(t) ∑ N_r t^r`
+  (`mul_effCount_eq_sum`, `X_mul_derivative_zeta`), proved by counting.
+* `FiniteField/Roots`: over `ℂ`, `L(t) = ∏_{i=1}^{2g} (1 − α_i t)` for the reciprocal roots
+  `α_i` (`recRoots`, `LPolyC_eq_prod`), `∏ α_i = q^g` (`prod_recRoots`), and
+  **`N_r = q^r + 1 − ∑_i α_i^r`** (`pointCount_eq`), by comparing logarithmic derivatives.
 
 ## Plan
 

@@ -5,6 +5,8 @@ import WeilCurves.ConstantExtension.Split
 import WeilCurves.FiniteField.ClassNumber
 import WeilCurves.FiniteField.Counting
 import WeilCurves.FiniteField.Finiteness
+import WeilCurves.FiniteField.PlaceCount
+import WeilCurves.FiniteField.Roots
 import WeilCurves.FiniteField.Zeta
 import WeilCurves.FunctionField.Adeles
 import WeilCurves.FunctionField.Basic

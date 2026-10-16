@@ -108,6 +108,13 @@ Constant field extensions (`WeilCurves/ConstantExtension/`):
   `K_r` has degree `≥ r` and `deg(Q|_K) ∣ deg Q`; so **above `P` there are exactly `deg P` places,
   each of degree `r`** (`places_above_of_dvd`), and **`N_r` is the number of places of `K_r` of
   degree one over `k_r`** (`ncard_deg_one_kr`).
+* `ConstantExtension/OverKr` (cont.): **`k_r` is the full constant field of `K_r`**
+  (`isFullConstantField_constExt`; a primitive element of `k_r(x)` has a minimal polynomial over
+  `k` that stays irreducible over `K`, so `[k_r(x) : k] ≤ [K_r : K] = r`).
+* `ConstantExtension/Genus`: `k_r` and `K` are linearly disjoint in `K_r`
+  (`linearIndependent_constExt`); with the conorm `B' = ∑ e(Q) A(Q|_K) Q`,
+  `ℓ_{k_r}(B') ≥ ℓ_k(A)` and `deg_{k_r} B' ≤ deg A` (fundamental inequality), hence
+  **`g(K_r) ≤ g(K)`** (`riemannConst_constExt_le`, `genus_constExt_le`).
 
 ## Plan
 

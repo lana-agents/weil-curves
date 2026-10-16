@@ -1,5 +1,6 @@
 import WeilCurves.ConstantExtension.Basic
 import WeilCurves.ConstantExtension.ExtPlaces
+import WeilCurves.ConstantExtension.Genus
 import WeilCurves.ConstantExtension.OverKr
 import WeilCurves.ConstantExtension.Schmidt
 import WeilCurves.ConstantExtension.Split

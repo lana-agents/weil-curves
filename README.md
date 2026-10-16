@@ -50,6 +50,13 @@ No `sorry`, no `axiom`. Proved so far (`WeilCurves/FunctionField/`):
 * `Specialty`: `A_K = A_K(B) + K` for `B` of large degree; the **index of specialty**
   `i(A) = dim A_K/(A_K(A) + K)` is finite and **`ℓ(A) − i(A) = deg A − riemannConst k K`**
   (`Divisor.ell_sub_iSpec`).
+* `WeilDifferential`: functionals on `A_K`, the spaces `Ω(A)` with `dim Ω(A) = i(A)`, the
+  action of `K`, `Ω(A) ∩ Ω(B) ⊆ Ω(A ⊔ B)`.
+* `RiemannRoch`: the Weil differentials form a **one-dimensional `K`-space**
+  (`exists_smulW_eq`); divisors of Weil differentials with `(x ω) = (x) + (ω)`; a canonical
+  divisor `W`, `i(A) = ℓ(W − A)`, and the **Riemann–Roch theorem**
+  `ℓ(A) − ℓ(W − A) = deg A + 1 − g` (`riemannRoch`), with `g = riemannConst k K + 1`;
+  `deg W = 2g − 2`, `ℓ(W) = ℓ(0) + g − 1`, and `ℓ(A) = deg A + 1 − g` for `deg A > 2g − 2`.
 
 ## Plan
 

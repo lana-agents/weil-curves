@@ -6,7 +6,9 @@ import WeilCurves.FunctionField.Divisor
 import WeilCurves.FunctionField.Place
 import WeilCurves.FunctionField.Residue
 import WeilCurves.FunctionField.Riemann
+import WeilCurves.FunctionField.RiemannRoch
 import WeilCurves.FunctionField.RiemannRochSpace
 import WeilCurves.FunctionField.Specialty
+import WeilCurves.FunctionField.WeilDifferential
 import WeilCurves.FunctionField.ZerosPoles
 import WeilCurves.LinearAlgebra.RelRank

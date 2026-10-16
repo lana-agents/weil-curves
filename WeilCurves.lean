@@ -1,7 +1,9 @@
 import WeilCurves.ConstantExtension.Basic
 import WeilCurves.ConstantExtension.ExtPlaces
+import WeilCurves.ConstantExtension.OverKr
 import WeilCurves.ConstantExtension.Schmidt
 import WeilCurves.ConstantExtension.Split
+import WeilCurves.ConstantExtension.Split2
 import WeilCurves.FiniteField.ClassNumber
 import WeilCurves.FiniteField.Counting
 import WeilCurves.FiniteField.Finiteness

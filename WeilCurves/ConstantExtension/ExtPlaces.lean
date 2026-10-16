@@ -112,25 +112,22 @@ instance (Q : Place k L) : IsLocalHom (incl (K := K) Q) := by
   refine isUnit_iff_exists_inv.mpr ⟨⟨_, hinv⟩, Subtype.ext ?_⟩
   simp [hx0]
 
+/-- The embedding `κ(Q|_K) → κ(Q)` of residue fields. -/
+noncomputable def residueAlgHom (Q : Place k L) :
+    (Q.restrict (K := K)).ResidueField →ₐ[k] Q.ResidueField :=
+  { IsLocalRing.ResidueField.map (incl (K := K) Q) with
+    commutes' := fun c ↦ by
+      change IsLocalRing.ResidueField.map (incl Q) (IsLocalRing.residue _ _) = _
+      rw [IsLocalRing.ResidueField.map_residue, Place.algebraMap_residueField]
+      congr 1
+      apply Subtype.ext
+      simp [incl, Place.coe_baseHom, ← IsScalarTower.algebraMap_apply] }
+
 omit [IsFunctionField k K] in
 /-- **`deg P ≤ deg Q`** for `P = Q|_K`. -/
-theorem deg_restrict_le (Q : Place k L) : (Q.restrict (K := K)).deg ≤ Q.deg := by
-  set P := Q.restrict (K := K)
-  set g := IsLocalRing.ResidueField.map (incl (K := K) Q)
-  let gl : P.ResidueField →ₗ[k] Q.ResidueField :=
-    { toFun := g
-      map_add' := map_add g
-      map_smul' := fun c z ↦ by
-        rw [RingHom.id_apply, Algebra.smul_def, Algebra.smul_def]
-        erw [map_mul]
-        congr 1
-        rw [Place.algebraMap_residueField, Place.algebraMap_residueField]
-        change IsLocalRing.ResidueField.map (incl Q) (IsLocalRing.residue _ _) = _
-        rw [IsLocalRing.ResidueField.map_residue]
-        congr 1
-        apply Subtype.ext
-        simp [incl, Place.coe_baseHom, ← IsScalarTower.algebraMap_apply] }
-  exact LinearMap.finrank_le_finrank_of_injective (f := gl) g.injective
+theorem deg_restrict_le (Q : Place k L) : (Q.restrict (K := K)).deg ≤ Q.deg :=
+  LinearMap.finrank_le_finrank_of_injective (f := (residueAlgHom (K := K) Q).toLinearMap)
+    (residueAlgHom (K := K) Q).injective
 
 end Place
 

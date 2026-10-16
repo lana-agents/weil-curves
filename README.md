@@ -101,6 +101,13 @@ Constant field extensions (`WeilCurves/ConstantExtension/`):
 * `FiniteField/Roots`: over `ℂ`, `L(t) = ∏_{i=1}^{2g} (1 − α_i t)` for the reciprocal roots
   `α_i` (`recRoots`, `LPolyC_eq_prod`), `∏ α_i = q^g` (`prod_recRoots`), and
   **`N_r = q^r + 1 − ∑_i α_i^r`** (`pointCount_eq`), by comparing logarithmic derivatives.
+* `ConstantExtension/OverKr`: `K_r` is a function field over `k_r` (embedding `k_r → K_r`,
+  generator ↦ `θ`); places over `k` and over `k_r` coincide, with `deg_k Q = r · deg_{k_r} Q`.
+* `ConstantExtension/Split2`: for `deg P ∣ r`, Chevalley's theorem applied to `O_P[θ] → E`
+  (`E ⊇ κ(P)` of degree `r / deg P`) gives at least `deg P` places above `P`; every place of
+  `K_r` has degree `≥ r` and `deg(Q|_K) ∣ deg Q`; so **above `P` there are exactly `deg P` places,
+  each of degree `r`** (`places_above_of_dvd`), and **`N_r` is the number of places of `K_r` of
+  degree one over `k_r`** (`ncard_deg_one_kr`).
 
 ## Plan
 

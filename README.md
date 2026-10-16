@@ -28,6 +28,19 @@ No `sorry`, no `axiom`. Proved so far (`WeilCurves/FunctionField/`):
   closure of `k(t)`, and `k[t^q]` is the image of `k[t]` because `k` is perfect.
 * `Place`: places (valuation subrings `O ⊊ K` containing `k`), their description by the
   charts (`Place.chartEquiv`), the DVR property, the normalised order `Place.ord` and its laws.
+* `Residue`: residue fields `κ(P)`, finite over `k` (Zariski), the degree
+  `Place.deg P = [κ(P) : k]`.
+* `ZerosPoles`: a transcendental element has a zero and a pole; finitely many zeros and poles;
+  the constants are the elements lying in every place.
+* `Degree`: `∑_{ord_P t > 0} ord_P(t) deg P = [K : k(t)]` and the same for the poles, for every
+  transcendental `t` (`Place.sum_ord_mul_deg_zeros`, `Place.sum_ord_mul_deg_poles`).
+* `Divisor`: divisors, degree, principal divisors `div k f`, and **`deg (div k f) = 0`**
+  (`Divisor.deg_div`).
+* `RiemannRochSpace`: `L(A)` and `ℓ(A) = dim_k L(A)` (finite), invariance under linear
+  equivalence, `ℓ(A) = 0` for `deg A < 0`, `ℓ(A) ≤ max 0 (deg A + ℓ(0))`, `ℓ(0) = [k' : k]`.
+* `Riemann`: **Riemann's theorem** — `deg A − ℓ(A)` is bounded above with maximum
+  `Divisor.riemannConst k K`, and `ℓ(A) = deg A − riemannConst k K` for `deg A` large
+  (`Divisor.riemann_equality`).
 
 ## Plan
 

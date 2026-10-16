@@ -4,4 +4,6 @@ import WeilCurves.FunctionField.Degree
 import WeilCurves.FunctionField.Divisor
 import WeilCurves.FunctionField.Place
 import WeilCurves.FunctionField.Residue
+import WeilCurves.FunctionField.Riemann
+import WeilCurves.FunctionField.RiemannRochSpace
 import WeilCurves.FunctionField.ZerosPoles

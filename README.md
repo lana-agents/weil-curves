@@ -57,6 +57,17 @@ No `sorry`, no `axiom`. Proved so far (`WeilCurves/FunctionField/`):
   divisor `W`, `i(A) = ℓ(W − A)`, and the **Riemann–Roch theorem**
   `ℓ(A) − ℓ(W − A) = deg A + 1 − g` (`riemannRoch`), with `g = riemannConst k K + 1`;
   `deg W = 2g − 2`, `ℓ(W) = ℓ(0) + g − 1`, and `ℓ(A) = deg A + 1 − g` for `deg A > 2g − 2`.
+* `Picard`: principal divisors, the divisor class group `Pic k K`, degree and `ℓ` on classes.
+
+Over a finite field `k` (`WeilCurves/FiniteField/`):
+
+* `Finiteness`: finitely many places of degree `≤ d`, finitely many effective divisors of each
+  degree.
+* `Counting`: if `k` is the full constant field, `#{E ≥ 0 | E ∼ A} · (q − 1) + 1 = q^{ℓ(A)}`.
+* `ClassNumber`: each `Cl(n)` is finite, the class number `h = #Cl(0)`, `#Cl(n) = h` when a
+  divisor of degree `n` exists, and the number `A_n` of effective divisors of degree `n`
+  satisfies `A_n (q − 1) = ∑_{c ∈ Cl(n)} (q^{ℓ(c)} − 1)`, hence
+  `A_n (q − 1) = #Cl(n) (q^{n+1−g} − 1)` for `n > 2g − 2`.
 
 ## Plan
 

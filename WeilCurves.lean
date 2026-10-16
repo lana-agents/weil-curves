@@ -1,8 +1,12 @@
+import WeilCurves.FiniteField.ClassNumber
+import WeilCurves.FiniteField.Counting
+import WeilCurves.FiniteField.Finiteness
 import WeilCurves.FunctionField.Adeles
 import WeilCurves.FunctionField.Basic
 import WeilCurves.FunctionField.Chart
 import WeilCurves.FunctionField.Degree
 import WeilCurves.FunctionField.Divisor
+import WeilCurves.FunctionField.Picard
 import WeilCurves.FunctionField.Place
 import WeilCurves.FunctionField.Residue
 import WeilCurves.FunctionField.Riemann

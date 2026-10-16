@@ -61,14 +61,13 @@ theorem aeval_mem_L (x : K) (p : k[X]) : aeval x p ∈ L (p.natDegree • polarD
 
 /-- At a place `P` where `x` is regular, `p(x)` vanishes for `p` the minimal polynomial of the
 residue of `x`. -/
-theorem exists_aeval_ord_pos {x : K} (hx : Transcendental k x) (P : Place k K) (hxP : x ∈ P.1) :
-    ∃ p : k[X], aeval x p ≠ 0 ∧ 0 < P.ord (aeval x p) := by
+theorem ord_aeval_minpoly_residue_pos {x : K} (hx : Transcendental k x) (P : Place k K)
+    (hxP : x ∈ P.1) : 0 < P.ord (aeval x (minpoly k (P.residue ⟨x, hxP⟩))) := by
   set r := P.residue ⟨x, hxP⟩
   have hint : IsIntegral k r := Algebra.IsIntegral.isIntegral r
   set p := minpoly k r
   have hp0 : p ≠ 0 := minpoly.ne_zero hint
   have hy0 : aeval x p ≠ 0 := fun h ↦ hx ⟨p, hp0, h⟩
-  refine ⟨p, hy0, ?_⟩
   set e : P.1 := p.eval₂ P.baseHom ⟨x, hxP⟩
   have hcomp : P.1.subtype.comp P.baseHom = algebraMap k K := by
     ext q; rfl
@@ -85,6 +84,12 @@ theorem exists_aeval_ord_pos {x : K} (hx : Transcendental k x) (P : Place k K) (
   rw [← he]
   refine (P.ord_pos_iff_mem_maximalIdeal (a := e) (by rw [he]; exact hy0)).mpr ?_
   exact P.residue_eq_zero_iff.mp hres
+
+/-- At a place `P` where `x` is regular, some `p(x) ≠ 0` with `p ∈ k[X]` vanishes. -/
+theorem exists_aeval_ord_pos {x : K} (hx : Transcendental k x) (P : Place k K) (hxP : x ∈ P.1) :
+    ∃ p : k[X], aeval x p ≠ 0 ∧ 0 < P.ord (aeval x p) :=
+  ⟨_, fun h ↦ hx ⟨_, minpoly.ne_zero (Algebra.IsIntegral.isIntegral (R := k)
+    (P.residue ⟨x, hxP⟩)), h⟩, ord_aeval_minpoly_residue_pos hx P hxP⟩
 
 /-! ### Reduction to multiples of a polar divisor -/
 

@@ -41,6 +41,15 @@ No `sorry`, no `axiom`. Proved so far (`WeilCurves/FunctionField/`):
 * `Riemann`: **Riemann's theorem** — `deg A − ℓ(A)` is bounded above with maximum
   `Divisor.riemannConst k K`, and `ℓ(A) = deg A − riemannConst k K` for `deg A` large
   (`Divisor.riemann_equality`).
+* `LinearAlgebra/RelRank`: relative ranks `dim (X + Y)/Y` of subspaces of an arbitrary
+  (possibly infinite-dimensional) vector space: additivity along chains and
+  `dim X/Y = dim (X+D)/(Y+D) + dim (X∩D)/(Y∩D)`.
+* `Adeles`: repartitions `A_K`, the subspaces `A_K(A)`, `A_K(A) ∩ K = L(A)`,
+  `dim A_K(A + D)/A_K(A) = deg D` for `D ≥ 0`, and
+  `dim (A_K(B) + K)/(A_K(A) + K) = (deg B − ℓ(B)) − (deg A − ℓ(A))` for `A ≤ B`.
+* `Specialty`: `A_K = A_K(B) + K` for `B` of large degree; the **index of specialty**
+  `i(A) = dim A_K/(A_K(A) + K)` is finite and **`ℓ(A) − i(A) = deg A − riemannConst k K`**
+  (`Divisor.ell_sub_iSpec`).
 
 ## Plan
 

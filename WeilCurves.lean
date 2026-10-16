@@ -1,3 +1,4 @@
+import WeilCurves.FunctionField.Adeles
 import WeilCurves.FunctionField.Basic
 import WeilCurves.FunctionField.Chart
 import WeilCurves.FunctionField.Degree
@@ -6,4 +7,6 @@ import WeilCurves.FunctionField.Place
 import WeilCurves.FunctionField.Residue
 import WeilCurves.FunctionField.Riemann
 import WeilCurves.FunctionField.RiemannRochSpace
+import WeilCurves.FunctionField.Specialty
 import WeilCurves.FunctionField.ZerosPoles
+import WeilCurves.LinearAlgebra.RelRank

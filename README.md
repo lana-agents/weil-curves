@@ -68,6 +68,12 @@ Over a finite field `k` (`WeilCurves/FiniteField/`):
   divisor of degree `n` exists, and the number `A_n` of effective divisors of degree `n`
   satisfies `A_n (q − 1) = ∑_{c ∈ Cl(n)} (q^{ℓ(c)} − 1)`, hence
   `A_n (q − 1) = #Cl(n) (q^{n+1−g} − 1)` for `n > 2g − 2`.
+* `Zeta`: the zeta function `Z(t) = ∑ A_n t^n ∈ ℤ⟦t⟧`; `ℓ(0) = 1` and `g ≥ 0` for `k` the
+  full constant field. **Rationality** (`exists_LPolynomial'`): *given a divisor of degree 1*
+  (explicit hypothesis, to be discharged by F. K. Schmidt's theorem),
+  `(1 − t)(1 − qt) Z(t) = L(t)` with `L ∈ ℤ[t]` of degree exactly `2g`, `L(0) = 1` and leading
+  coefficient `q^g` (computed from `ℓ` on the classes of degree `2g − 2`: `g` for the canonical
+  class, `g − 1` for the others).
 
 ## Plan
 

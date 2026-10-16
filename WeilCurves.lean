@@ -1,3 +1,5 @@
+import WeilCurves.ConstantExtension.Basic
+import WeilCurves.ConstantExtension.ExtPlaces
 import WeilCurves.FiniteField.ClassNumber
 import WeilCurves.FiniteField.Counting
 import WeilCurves.FiniteField.Finiteness

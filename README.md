@@ -75,6 +75,18 @@ Over a finite field `k` (`WeilCurves/FiniteField/`):
   coefficient `q^g` (computed from `ℓ` on the classes of degree `2g − 2`: `g` for the canonical
   class, `g − 1` for the others).
 
+Constant field extensions (`WeilCurves/ConstantExtension/`):
+
+* `Basic`: a finite extension of a function field over `k` is a function field over `k`
+  (`IsFunctionField.of_finite`); an irreducible polynomial over `k` stays irreducible over `K`
+  when `k` is the full constant field (`irreducible_map_of_full`); the constant field extension
+  `ConstExt k K r = K[X]/(f)` of degree `r` (`f` the minimal polynomial of a primitive element of
+  the degree-`r` extension of `k`), with `[ConstExt k K r : K] = r`.
+* `ExtPlaces` (for any finite extension `L / K` of function fields): restriction of places,
+  `ord_Q x = e(Q) ord_P x`, `deg P ≤ deg Q`, `[L : k(x)] = [L : K][K : k(x)]`, an element whose
+  only zero is a given place, and the **fundamental inequality**
+  `∑_{Q ∈ S} e(Q) deg Q ≤ [L : K] deg P` for places `Q` above `P`.
+
 ## Plan
 
 See `Blueprint.md` (reuse check, route, milestones W1–W12).

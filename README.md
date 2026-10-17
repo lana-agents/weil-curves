@@ -129,6 +129,32 @@ and Kedlaya (*Weil cohomology* notes, Thm 5.1.5, Lemma 5.1.7):
   place `α`, `τ ∈ Aut_k F` and a finite set `S` of places `β ≠ α, τα` with `x^Q ≡ τ x (mod β)`,
   `∑_{β ∈ S} deg β ≤ Q + (2g + 1) p^b`.
 
+The lower bound and the Riemann hypothesis (`WeilCurves/PointBound/`, `WeilCurves/Galois/`,
+`WeilCurves/RH/`), after Nivedita (§3.2.3–3.2.4, eq. 3.4, Prop. 3.8–3.9, Thm. 3.10) and Kedlaya
+(Lemmas 5.1.4, 5.1.7–5.1.9), in function-field language (Frobenius *places* instead of
+geometric points):
+
+* `PointBound/Upper`: **`N_r ≤ q^r + 1 + (2g + 1) q^{r/2}`** for `q^r = p^{2b} > (g + 1)^4`
+  (`pointCount_le`; `bombieri` on `K_r / k_r` with `τ = id`).
+* `Galois/Frobenius`: for `M / k(x)` Galois and a place `β ∋ x` with `x^{q^n} ≡ x (mod β)`, a
+  **Frobenius element** `σ ∈ Gal(M / k(x))` with `y^{q^n} ≡ σ y (mod β)` on `O_β`
+  (`exists_frobenius_place`; Mathlib's `Ideal.Quotient.stabilizerHom_surjective` on the chart
+  ring).
+* `Galois/Ramification`: a nonzero `δ ∈ k[x]` with `ord_β(x^Q − x) ≤ ord_β δ` whenever
+  `ord_β(x^Q − x) ≥ 2` (`exists_ramification_bound`; Mathlib's different ideal instead of
+  Riemann–Hurwitz).
+* `Galois/BaseField`: places over `k` and over a finite `k' ⊇ k`, `deg_k = [k' : k] deg_{k'}`;
+  `∑_{zeros} ord(t^Q − t) deg = Q [M : k(t)]`.
+* `Galois/Count`: **the twisted count** (`pointCount_ge_of_galois`): for `M ⊇ F` Galois over
+  `k'(x)` and over `F`, `k'` the full constant field of `M` with a rational place,
+  `N_{dm}(F) ≥ Q − (|G| − 1)((2g(M) + 1)√Q + 2) − C` for `Q = |k'|^m = p^{2b} > (g(M) + 1)^4`.
+* `Galois/Closure`: the construction (separating element, splitting field `M₁`, its constant
+  field `k₁`, `M = ConstExt k₁ M₁ D` with a rational place, Galois over `F` and `k'(x)`) and
+  **`exists_lower_bound`**.
+* `RH/RootTest`: Kedlaya's Lemma 5.1.4 as an algebraic root test for power sums.
+* `RH/Conditional`, `RH/Main`: **the Riemann hypothesis `|α_i| = √q`** (`riemannHypothesis`)
+  and **the Hasse–Weil bound `|N_r − q^r − 1| ≤ 2g q^{r/2}`** (`hasseWeil`).
+
 ## Plan
 
 See `Blueprint.md` (reuse check, route, milestones W1–W12).

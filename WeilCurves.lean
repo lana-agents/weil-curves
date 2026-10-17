@@ -29,4 +29,13 @@ import WeilCurves.FunctionField.RiemannRochSpace
 import WeilCurves.FunctionField.Specialty
 import WeilCurves.FunctionField.WeilDifferential
 import WeilCurves.FunctionField.ZerosPoles
+import WeilCurves.Galois.BaseField
+import WeilCurves.Galois.Closure
+import WeilCurves.Galois.Count
+import WeilCurves.Galois.Frobenius
+import WeilCurves.Galois.Ramification
 import WeilCurves.LinearAlgebra.RelRank
+import WeilCurves.PointBound.Upper
+import WeilCurves.RH.Conditional
+import WeilCurves.RH.Main
+import WeilCurves.RH.RootTest

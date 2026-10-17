@@ -1,3 +1,7 @@
+import WeilCurves.Bombieri.Automorphism
+import WeilCurves.Bombieri.Bound
+import WeilCurves.Bombieri.Main
+import WeilCurves.Bombieri.PoleOrder
 import WeilCurves.ConstantExtension.Basic
 import WeilCurves.ConstantExtension.ExtPlaces
 import WeilCurves.ConstantExtension.Genus

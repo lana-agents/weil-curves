@@ -116,6 +116,19 @@ Constant field extensions (`WeilCurves/ConstantExtension/`):
   `ℓ_{k_r}(B') ≥ ℓ_k(A)` and `deg_{k_r} B' ≤ deg A` (fundamental inequality), hence
   **`g(K_r) ≤ g(K)`** (`riemannConst_constExt_le`, `genus_constExt_le`).
 
+Bombieri's bound (`WeilCurves/Bombieri/`), after Nivedita (CMI 2009, §3.2.2, Thm 3.6, Lemma 3.7)
+and Kedlaya (*Weil cohomology* notes, Thm 5.1.5, Lemma 5.1.7):
+
+* `Automorphism`: a `k`-automorphism `τ` acts on places (`Place.map`), preserving `ord` and
+  degrees; `τ L(m Q) ⊆ L(m · τQ)`.
+* `PoleOrder`: the set `J` of pole orders at a rational place `α` realised in `L(m α)` has
+  `#J ≥ ℓ(m α)`.
+* `Bound`: the space of `p^b`-th powers of `L(l α)` (dimension `≥ ℓ(l α)`), `L(A)L(B) ⊆ L(A+B)`,
+  and Lemma 3.7 (`∑ g_j^{p^b} h_j^Q ≠ 0` if `l p^b < Q`).
+* `Main`: **Bombieri's bound, twisted form** (`bombieri`): for `(g+1)^4 < Q = p^{2b}`, a rational
+  place `α`, `τ ∈ Aut_k F` and a finite set `S` of places `β ≠ α, τα` with `x^Q ≡ τ x (mod β)`,
+  `∑_{β ∈ S} deg β ≤ Q + (2g + 1) p^b`.
+
 ## Plan
 
 See `Blueprint.md` (reuse check, route, milestones W1–W12).

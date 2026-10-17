@@ -155,6 +155,27 @@ geometric points):
 * `RH/Conditional`, `RH/Main`: **the Riemann hypothesis `|α_i| = √q`** (`riemannHypothesis`)
   and **the Hasse–Weil bound `|N_r − q^r − 1| ≤ 2g q^{r/2}`** (`hasseWeil`).
 
+The Hurwitz genus formula (`WeilCurves/Hurwitz/`), after Stichtenoth (*Algebraic Function Fields
+and Codes*, §III.4–III.5: cotrace, complementary module, Theorems 3.4.6, 3.4.13, 3.5.1; statements
+as quoted in Chen–Hu, arXiv:2603.23930, Thms. 2.1–2.2), for a finite separable extension `L / K`
+of function fields over a perfect field `k` (degrees and genera relative to `k`):
+
+* `Local`: the integral closure `O'_P` of `O_P` in `L` (`= ⋂_{Q|P} O_Q`, a semilocal PID) and the
+  complementary module `C_P = c_P O'_P` (Mathlib's dual of `O'_P`, inverse of `differentIdeal`);
+  `Tr(C_P) = O_P` and the sharpness of `C_P` at each `Q | P`.
+* `Different`: ramification indices, the conorm with `deg Con A = [L : K] deg A` (fundamental
+  equality), the different exponents `d(Q|P) = -ord_Q c_P ≥ 0` and the different `Diff(L/K)`.
+* `Lift`, `Cotrace`: approximation; the cotrace `Cotr(ω)` (through families `(x_P) ∈ ∏_P L`, since
+  repartitions here have values in `L`, not in completions) is a Weil differential of `L` with
+  divisor `Con (ω) + Diff(L/K)`.
+* `Main`: **`riemannHurwitz`**: `2 g_L − 2 = [L : K] (2 g_K − 2) + deg Diff(L/K)`.
+* `Tame`: Dedekind's different theorem in characteristic zero, `d(Q|P) = e(Q|P) − 1`
+  (`diffExp_eq_of_charZero`), hence `2 g_L − 2 = [L : K](2 g_K − 2) + ∑_Q (e_Q − 1) deg Q`
+  (`riemannHurwitz_charZero`).
+* `Belyi`: `g(k(x)) = 0`, and for `k` algebraically closed of characteristic zero and `x ∈ L`
+  unramified outside `0, 1, ∞`: **`2 g_L − 2 = [L : k(x)] − c₀ − c₁ − c_∞`** (`genus_belyi`, with
+  `c_a` the number of places of `L` over `a`).
+
 ## Plan
 
 See `Blueprint.md` (reuse check, route, milestones W1–W12).

@@ -34,6 +34,13 @@ import WeilCurves.Galois.Closure
 import WeilCurves.Galois.Count
 import WeilCurves.Galois.Frobenius
 import WeilCurves.Galois.Ramification
+import WeilCurves.Hurwitz.Belyi
+import WeilCurves.Hurwitz.Cotrace
+import WeilCurves.Hurwitz.Different
+import WeilCurves.Hurwitz.Lift
+import WeilCurves.Hurwitz.Local
+import WeilCurves.Hurwitz.Main
+import WeilCurves.Hurwitz.Tame
 import WeilCurves.LinearAlgebra.RelRank
 import WeilCurves.PointBound.Upper
 import WeilCurves.RH.Conditional

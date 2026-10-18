@@ -20,6 +20,7 @@ import WeilCurves.FunctionField.Basic
 import WeilCurves.FunctionField.Chart
 import WeilCurves.FunctionField.Degree
 import WeilCurves.FunctionField.Divisor
+import WeilCurves.FunctionField.LinearSystem
 import WeilCurves.FunctionField.Picard
 import WeilCurves.FunctionField.Place
 import WeilCurves.FunctionField.Residue

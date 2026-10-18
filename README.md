@@ -41,6 +41,11 @@ No `sorry`, no `axiom`. Proved so far (`WeilCurves/FunctionField/`):
 * `Riemann`: **Riemann's theorem** — `deg A − ℓ(A)` is bounded above with maximum
   `Divisor.riemannConst k K`, and `ℓ(A) = deg A − riemannConst k K` for `deg A` large
   (`Divisor.riemann_equality`).
+* `LinearSystem` (`k` algebraically closed; [AbsTopIII] Props 1.1, 1.2, for Uchida's lemma):
+  values `Place.IsValue P f c` / `Place.value` (unique, additive, multiplicative), constants
+  `= k`, infinitely many places, **`Divisor.ell_eq_sInf`** (Prop 1.1(ii): `ℓ(D)` is the least
+  degree of an effective `E` with `L(D − E) = 0`), **`Divisor.exists_uchidaConfig`**
+  (Prop 1.2(i)), and two-point evaluation `Divisor.existsUnique_isValue_two`.
 * `LinearAlgebra/RelRank`: relative ranks `dim (X + Y)/Y` of subspaces of an arbitrary
   (possibly infinite-dimensional) vector space: additivity along chains and
   `dim X/Y = dim (X+D)/(Y+D) + dim (X∩D)/(Y∩D)`.
